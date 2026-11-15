@@ -1,0 +1,23 @@
+from pathlib import Path
+from lupa.lua54 import LuaRuntime
+lua=LuaRuntime(unpack_returned_tuples=True)
+lua.globals().gamepad=lua.execute((Path(__file__).parents[1]/'reframework/autorun/CampShortcutProbe/gamepad.lua').read_text(encoding='utf-8'))
+lua.execute('''
+local f=gamepad.short_press(0.4)
+assert(not f(0,'pad2',false,false,true))
+assert(not f(1,'pad2',true,false,true),'Fired before release')
+assert(f(1.2,'pad2',false,false,true),'Short L3 did not fire')
+assert(not f(1.3,'pad2',false,false,true),'Duplicate event')
+f(2,'pad2',true,false,true)
+assert(not f(2.5,'pad2',true,false,true),'Long hold fired')
+assert(not f(3,'pad2',false,false,true),'Long release fired')
+f(4,'pad2',true,false,true);f(4.1,'pad2',true,true,true)
+assert(not f(4.2,'pad2',false,false,true),'L3+R3 fired')
+f(5,'pad2',true,false,true);f(5.1,'pad3',true,false,true)
+assert(not f(5.2,'pad3',false,false,true),'Device switch carried press')
+f(6,'pad3',true,false,true);f(6.1,'pad3',true,false,false)
+assert(not f(6.2,'pad3',false,false,true),'UI inhibition carried press')
+f(7,'pad3',true,false,true)
+assert(f(7.2,'pad3',false,false,true),'Fresh tap after inhibition failed')
+''')
+print('PASS: short L3 on release once; long hold rejected; L3+R3 excluded; device switch; UI inhibition; rearm')

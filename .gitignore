@@ -1,0 +1,8 @@
+.deps/
+__pycache__/
+release-build/
+release-install-test/
+dist/
+evidence/release-package.json
+*api-key*
+*.secret

@@ -1,0 +1,42 @@
+[b]Pocket Camp · 随身营地[/b]
+
+在《怪物猎人：崛起／曙光》的任务地图中，直接打开游戏原生帐篷菜单，切换武器与整套配装、整理道具、用餐和管理随从。无需返回营地，也无需每个任务先进入一次帐篷。
+
+[b]操作[/b]
+[list]
+[*]手柄：短按并松开 L3（按住少于 0.4 秒）。
+[*]键盘：F10。
+[*]使用原生“返回／离开帐篷”退出。使用快捷键前关闭 REFramework 覆盖界面和其他菜单。
+[*]长按 L3、L3+R3 不触发；本 Mod 不屏蔽游戏原始按键。
+[/list]
+
+[b]前置[/b]
+需要 [url=https://github.com/praydog/REFramework/releases]REFramework 官方发布版[/url]。下载 MHRISE.zip，取出 dinput8.dll 放到 MonsterHunterRise.exe 同一目录。不要下载 MHWILDS.zip 或 Source code；已有正常工作的框架可继续使用。
+[url=https://cursey.github.io/reframework-book/#loading-a-script]官方脚本安装说明[/url]
+
+[b]安装[/b]
+1. 正常退出游戏。
+2. Steam 库右键游戏 → 管理 → 浏览本地文件。
+3. 将本包内的 reframework 文件夹复制到游戏根目录，允许合并。
+4. 启动游戏，进入任务后直接按快捷键。无需手动加载脚本。
+
+[code]
+MonsterHunterRise/
+  MonsterHunterRise.exe
+  dinput8.dll
+  reframework/
+    autorun/
+      PocketCamp.lua
+[/code]
+
+[b]升级与卸载[/b]
+升级：退出游戏，覆盖 reframework/autorun/PocketCamp.lua。
+研究版用户须先移走 reframework/autorun/CampShortcutProbe.lua、reframework/autorun/CampShortcutProbe/、lua/CampShortcutProbe/。
+卸载：退出游戏，删除 PocketCamp.lua；可选删除 reframework/data/PocketCamp/ 状态记录。不要删除共享框架或其他 Mod。
+
+[b]兼容范围[/b]
+实测游戏版本 16.0.2.0（Steam PC），REFramework 构建 654bac566ad2cb645a5ddbf72d0008e8698187b8。探索、正式狩猎、单人、联机、战斗换装、用餐及随从管理已有实机验收。未逐一验证所有特殊任务、竞技场及其他框架构建。
+标题、据点、加载中或已有设施菜单时不打开；菜单尚未退出时请勿 Reset scripts。与同用 L3/F10 的 Mod 或个人键位可能冲突。
+
+[b]1.0.0[/b]
+移除每个任务先进入帐篷的初始化要求，修复换武器后退出坐姿残留；独立单文件安装，不再依赖研究探针、热加载器或模块镜像。

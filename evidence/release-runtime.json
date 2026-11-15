@@ -1,0 +1,9 @@
+{
+    "calls": 2,
+    "cleanup_calls": 2,
+    "completed": 2,
+    "event": "player_exit_complete",
+    "gamepad_available": true,
+    "phase": "closed",
+    "version": "1.0.0"
+}
