@@ -1,3 +1,5 @@
+[![Downloads](https://img.shields.io/github/downloads/boyl/pocket-camp/total?label=Downloads&color=blue)](https://github.com/boyl/pocket-camp/releases) [![Stars](https://img.shields.io/github/stars/boyl/pocket-camp?label=Stars)](https://github.com/boyl/pocket-camp/stargazers) [![Latest Release](https://img.shields.io/github/v/release/boyl/pocket-camp?label=Release)](https://github.com/boyl/pocket-camp/releases/latest) [![License](https://img.shields.io/github/license/boyl/pocket-camp?label=License)](https://github.com/boyl/pocket-camp/blob/HEAD/LICENSE)
+
 # Pocket Camp · 随身营地
 
 **版本 1.0.0 ·《怪物猎人：崛起／曙光》Steam PC**
